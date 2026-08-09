@@ -89,7 +89,7 @@ public:
             cout << "⚠ WARNING: Memory leaks detected!" << endl;
             cout << "The following datasets were not properly deallocated:" << endl;
             for (DataSet* set : activeSets) {
-                cout << "  - " << set->name << " (" << set->size << " elements)" << endl;
+                cout << " - " << set->name << " (" << set->size << " elements)" << endl;
             }
         } else {
             cout << "✓ No memory leaks detected - all datasets properly cleaned up!" << endl;
@@ -125,7 +125,8 @@ int main() {
     // Properly deallocate some datasets
     cout << "\n--- Proper Cleanup ---" << endl;
     tracker.deallocateDataSet("Humidity");
-    tracker.deallocateDataSet("Pressure");    
+    tracker.deallocateDataSet("Pressure");
+    tracker.deallocateDataSet("Temperature"); 
     tracker.displayActiveDataSets();    
     // Check for leaks before program ends
     tracker.detectMemoryLeaks();    
